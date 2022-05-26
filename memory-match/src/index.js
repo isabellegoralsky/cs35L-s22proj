@@ -99,6 +99,7 @@ class NavBar extends React.Component {
   render () {
     return (
       <nav>
+        <div><img className="navlogo" src="memmatch35L.svg" alt="library" width="100" height="60"/></div>
         <ul class="nav-items">
           <li><a class="nav-item" href="google.com">GAME</a></li>
           <li><a class="nav-item" href="google.com">COMMENTS/CONCERNS</a></li>
