@@ -1,2 +1,4 @@
 # cs35L-s22proj
-Game implementation for CS35L project.
+Matching game on 4x4 gride using bulldog images.
+
+

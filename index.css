@@ -1,3 +1,42 @@
+.libraries{
+    color: #0A0708;
+    padding: 165px;
+    padding-top: 65px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, 
+sans-serif;
+}
+
+.status{
+    padding:10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.rows{
+    padding-top: 20px;
+}
+
+.img-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.lib-img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.libimages{
+    border-radius: 15px;
+}
+
+.lib{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
@@ -13,14 +52,10 @@ ol, ul {
   display: table;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-
 .square {
   background: #ffff;
   border: 1px solid #9999;
-  float: left;
+  float: left;   
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -35,16 +70,16 @@ ol, ul {
 .square:focus {
   outline: none;
 }
-
+  
 .kbd-navigation .square:focus {
   background: #dddd;
 }
-
+  
 .game {
   display: flex;
   flex-direction: row;
 }
-
+ 
 .game-info {
   margin-left: 20px;
 }
