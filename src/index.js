@@ -2,23 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-function loadImages(){
-        // Declare an array object for our array of images
-        let images = [];
-        var imageFiles = ['bull0.jpg', 'bull1.jpg','bull2.jpg','bull3.jpg','bull4.jpg',
-                        'bull5.jpg','bull6.jpg','bull7.jpg','bull8.jpg']  
-                        
-        for (var i = 0, j = imageFiles.length; i < j; i++) {
-        var image = new Image; //This is a placeholder
-        image.src = 'bulldog/' + imageFiles[i]; //Set the src attribute
-        images.push(image); //Append the new image into the pictures array
-        }
-         
-        //Show the result:
-        console.log(images);
-        return images;
-}
-
 //optimized Fisher-Yates shuffle algorithm 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -26,16 +9,6 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
   return array;
-}
-
-function Square(props){
-  return (
-    <button
-      className="4square"
-      onClick={()=> props.onClick()}>
-      {props.value}
-    </button>
-  );
 }
 
 function Image(props){
@@ -131,15 +104,6 @@ class Board extends React.Component {
     }
   }
 
-  renderSquare(i) {
-    return (
-      <Square
-        value={this.state.img_show[i]}
-        onClick={() => this.handleClick(i)}
-      />
-    );
-  }
-      
   renderImage(i) {
     var index = this.state.img_show[i]
     console.log("pset: ", this.state.pset);
@@ -178,7 +142,6 @@ class Board extends React.Component {
       status = 'Choose a Card. Score: ' + this.state.score;
     }
       
-    var ar = [0,1,2,3];
     return (
       <div>
         <label>
