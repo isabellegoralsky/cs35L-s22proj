@@ -2,8 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 import {
-    NavLink, BrowserRouter as Router, Routes,
-    Route
+    BrowserRouter as Router
 } from "react-router-dom";
 
 export default function Ocean() {
@@ -45,19 +44,19 @@ export default function Ocean() {
             <div>
                 <div className="rows">
                     <div className="img-row">
-                        <div className="lib-img">{renderImage("sea/s1.jpg")}</div>
-                        <div className="lib-img">{renderImage("sea/s2.jpg")}</div>
-                        <div className="lib-img">{renderImage("sea/s3.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s1.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s2.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s3.jpg")}</div>
                     </div>
                     <div className="img-row">
-                        <div className="lib-img">{renderImage("sea/s4.jpg")}</div>
-                        <div className="lib-img">{renderImage("sea/s7.JPG")}</div>
-                        <div className="lib-img">{renderImage("sea/s6.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s4.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s7.JPG")}</div>
+                        <div className="lib-img">{renderImage("/sea/s6.jpg")}</div>
                     </div>
                     <div className="img-row">
-                        <div className="lib-img">{renderImage("sea/s9.jpg")}</div>
-                        <div className="lib-img">{renderImage("sea/s8.jpg")}</div>
-                        <div className="lib-img">{renderImage("sea/s5.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s9.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s8.jpg")}</div>
+                        <div className="lib-img">{renderImage("/sea/s5.jpg")}</div>
                     </div>
                 </div>
             </div>
@@ -103,12 +102,12 @@ export default function Ocean() {
             return (
                 <div>
                     <div className="navigation-div"> <NavBar /> </div>
-                    <div>
+                    <div className="libraries">
                         <div className="library-titles">GAME CARD LIBRARY</div>
                         <div className="status">Browse the 4 library previews below to customize your playing cards on the main page!</div>
                         <div className="l1nks">
                             <Router>
-                                <div>
+                                <div className="linkies">
                                     <a href={`/pup`}>
                                         <div className="lib">{renderSquare("Puppy Theme")}</div>
                                     </a>
@@ -124,7 +123,6 @@ export default function Ocean() {
                                 </div>
                             </Router>
                         </div>
-                        <div className="explore">Click the themes to explore :D</div>
                     </div>
                     <div className="libraries-bull">
                         <div className="library">

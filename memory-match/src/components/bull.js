@@ -2,8 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 import {
-    NavLink, BrowserRouter as Router, Routes,
-    Route
+   BrowserRouter as Router
 } from "react-router-dom";
 
 
@@ -105,12 +104,12 @@ class Bull extends React.Component {
     return (
         <div>
             <div className="navigation-div"> <NavBar /> </div>
-            <div>
+            <div className="libraries">
                 <div className="library-titles">GAME CARD LIBRARY</div>
                 <div className="status">Browse the 4 library previews below to customize your playing cards on the main page!</div>
                 <div className="l1nks">
                     <Router>
-                        <div>
+                        <div className="linkies">
                             <a href={`/pup`}>
                                 <div className="lib">{renderSquare("Puppy Theme")}</div>
                             </a>
@@ -126,7 +125,6 @@ class Bull extends React.Component {
                         </div>
                     </Router>
                 </div>
-                <div className="explore">Click the themes to explore :D</div>
             </div>
       <div className="libraries-bull">
         <div className="library">

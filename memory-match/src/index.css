@@ -20,10 +20,12 @@ nav {
 
 .nav-item {
     padding: 0px 70px;
+    padding-top: 15px;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #0A0708;
     transition: color 0.2s;
+    font-size: 14px;
 }
 
     .nav-item:visited {
@@ -46,6 +48,9 @@ nav {
 body {
     background-color: #fff5ee;
     margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    
 }
 
 .library-titles {
@@ -55,18 +60,16 @@ body {
 
 .libraries {
     color: #0A0708;
-    padding: 165px;
+    padding-left: 165px;
+    padding-right: 165px;
     padding-top: 65px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 20px;
 }
 
 .status {
     padding: 10px;
     padding-bottom: 0;
-}
-
-.rows {
-    padding-left: 150px;
+    font-size: 14px;
 }
 
 .img-row {
@@ -90,22 +93,29 @@ footer {
     padding-bottom: 100px;
     background-color: #747474;
     margin: 0;
+    bottom: 0px;
+    position: sticky;
     width: 100%;
     text-align: center;
     color: #fff5ee;
+    margin-top: 150px;
+    font-size: smaller;
 }
 
 .l1nks {
+    padding: 0 0 0 0;
+}
+
+.linkies{
     display: flex;
-    padding: 10px 0 0 0;
+    flex-direction: row;
 }
 
 .lib {
     padding-top: 10px;
 }
 
-button {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.options {
     font-size: 14px;
     background-color: #747474;
     border-radius: 5px;
@@ -122,18 +132,6 @@ a {
     text-decoration: none;
 }
 
-
-
-
-
-
-.libraries {
-    color: #0A0708;
-    padding: 165px;
-    padding-top: 65px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 .status {
     padding: 10px;
     padding-bottom: 0;
@@ -142,6 +140,7 @@ a {
 
 .rows {
     padding-top: 20px;
+    justify-content: center;
 }
 
 .img-row {
@@ -163,11 +162,6 @@ a {
 .lib {
     padding-left: 5px;
     padding-right: 5px;
-}
-
-body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
 }
 
 ol, ul {
@@ -210,4 +204,22 @@ ol, ul {
 
 .game-info {
     margin-left: 20px;
+}
+
+.home-p{
+    padding: 5px 400px 0 400px;
+    color: #747474;
+    font-size: 14px;
+}
+
+.home-int{
+    text-align: center;
+}
+
+.home-title{
+    padding-top: 80px;
+}
+
+.home-title2{
+    padding-top: 20px;
 }

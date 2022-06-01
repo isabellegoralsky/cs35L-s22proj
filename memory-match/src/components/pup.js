@@ -2,8 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 import {
-    NavLink, BrowserRouter as Router, Routes,
-    Route
+    BrowserRouter as Router
 } from "react-router-dom";
 
 export default function Pup() {
@@ -98,17 +97,18 @@ export default function Pup() {
         }
     }
 
+
     class Pup extends React.Component {
         render() {
             return (
                 <div>
                     <div className="navigation-div"> <NavBar /> </div>
-                    <div>
+                    <div className="libraries">
                         <div className="library-titles">GAME CARD LIBRARY</div>
                         <div className="status">Browse the 4 library previews below to customize your playing cards on the main page!</div>
                         <div className="l1nks">
                             <Router>
-                                <div>
+                                <div className="linkies">
                                     <a href={`/pup`}>
                                         <div className="lib">{renderSquare("Puppy Theme")}</div>
                                     </a>
@@ -124,7 +124,6 @@ export default function Pup() {
                                 </div>
                             </Router>
                         </div>
-                        <div className="explore">Click the themes to explore :D</div>
                     </div>
                     <div className="libraries-bull">
                         <div className="library">

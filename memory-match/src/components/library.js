@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import {
-    BrowserRouter as Router, Routes,
-    Route
+    BrowserRouter as Router
 } from "react-router-dom";
 
 export default function Library() {
