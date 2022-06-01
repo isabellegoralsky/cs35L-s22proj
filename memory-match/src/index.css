@@ -1,0 +1,123 @@
+
+nav{
+    background-color: #fff5ee;
+    box-shadow: 0px 4px 4px rgba(16, 17, 43, 0.1);
+    justify-content: space-between;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: right;
+}
+
+.nav-item{
+    padding:0px 70px;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #0A0708;
+    transition: color 0.2s;
+}
+
+.nav-item:visited{
+    text-decoration: none;
+}
+
+.nav-item:hover{
+    text-decoration: none;
+    color: #747474;
+}
+
+.nav-item:active{
+    text-decoration: none;
+}
+
+.navlogo{
+    padding-top: 5px;
+}
+
+body{
+    background-color: #fff5ee;
+    margin:0;
+}
+
+.library-titles{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 42px;
+}
+
+.libraries{
+    color: #0A0708;
+    padding: 165px;
+    padding-top: 65px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.status{
+    padding:10px;
+    padding-bottom: 0;
+}
+
+.rows{
+    padding-left: 150px;
+}
+
+.img-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.lib-img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.libimages{
+    border-radius: 15px;
+}
+
+footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #747474;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff5ee;
+}
+
+.l1nks{
+    display: flex;
+    padding: 10px 0 0 0;
+}
+
+.lib{
+    padding-top: 10px;
+}
+
+button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    background-color: #747474;
+    border-radius: 5px;
+    color:white;
+}
+
+.explore{
+    font-size: 16px;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+a{
+    text-decoration: none;
+}
