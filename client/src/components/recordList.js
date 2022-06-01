@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import ReactDOM from 'react-dom/client';
+
+import {
+    BrowserRouter as Router, Routes,
+    Route
+} from "react-router-dom";
 
 
 const Record = (props) => (
@@ -23,38 +29,6 @@ export default function RecordList() {
         comment: "",
         likes: 0,
     });
-
-    // These methods will update the state properties.
-    function updateForm(value) {
-        return setForm((prev) => {
-            return { ...prev, ...value };
-        });
-    }
-
-    // This function will handle the submission.
-    async function onSubmit(e) {
-        e.preventDefault();
-
-        // When a post request is sent to the create url, we'll add a new record to the database.
-        const newPerson = { ...form };
-
-        await fetch("http://localhost:5000/record/add", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newPerson),
-        })
-            .catch(error => {
-                window.alert(error);
-                return;
-            });
-
-        setForm({ comment: "", likes: 0 });
-        window.location.reload();
-    }
-
-  
     
 
     // This method fetches the records from the database, sorted by most popular or least popular, based on sortvalue.
@@ -164,53 +138,115 @@ export default function RecordList() {
         });
     }
 
+    class NavBar extends React.Component {
+        render() {
+            return (
+                <nav>
+                    <div><img className="navlogo" src="memmatch35L.svg" alt="library" width="100" height="60" /></div>
+                    <ul class="nav-items">
+                        <Router><a href={`/`}><li class="nav-item">HOME</li></a></Router>
+                        <Router><a href={`/game`}><li class="nav-item">GAME</li></a></Router>
+                        <Router><a href={`/comments`}> <li class="nav-item">COMMENTS/CONCERNS</li></a></Router>
+                        <Router><a href={`/library`}> <li class="nav-item">LIBRARY</li></a></Router>
+                    </ul>
+                </nav>
+            )
+        }
+    }
     // This following section will display the table with the records of individuals.
-    return (
-        <div>
-            <h3>Comments and Concerns</h3>
-            <div>
-                <form onSubmit={onSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="comment">Leave a Comment!</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="comment"
-                            value={form.comment}
-                            onChange={(e) => updateForm({ comment: e.target.value })}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="submit"
-                            value="Submit"
-                            className="btn btn-primary"
-                        />
-                    </div>
-                </form>
-            </div>
-            <table className="table table-striped" style={{ marginTop: 20 }}>
-                <thead>
-                    <tr>
-                        <th>Comment</th>
-                        <th>Likes</th>
-                        <th>Action</th>
 
-                    </tr>
+    class MainPage extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { value: ''};
 
-                </thead>
-                <tbody>{recordList()}</tbody>
-                <p>
-                    Sort by:
-                    <button className="btn btn-link" onClick={() => { setSortVal(0); }}>
-                        Most Popular
-                    </button> |
-                    <button className="btn btn-link" onClick={() => { setSortVal(1); }}>
-                        Least Popular
-                    </button>
-                </p>
-            </table>
-        </div>
-    );
+            this.handleChange = this.handleChange.bind(this);
+            this.onSubmit = this.onSubmit.bind(this);  
+        }
+
+        handleChange(event) {
+            this.setState({ value: event.target.value });
+        }
+    
+
+    // This function will handle the submission.
+    async onSubmit(e) {
+        e.preventDefault();
+
+        // When a post request is sent to the create url, we'll add a new record to the database.
+        const newPerson = {
+            comment: this.state.value,
+            likes: 0,
+        };
+
+        await fetch("http://localhost:5000/record/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newPerson),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+
+        setForm({ comment: "", likes: 0 });
+        window.location.reload();
+    }
+        render() {
+            return (
+                <div>
+                    <div className="navigation-div"> <NavBar /> </div>
+                    <h3>Comments and Concerns</h3>
+                    <div>
+                        <form onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="comment">Leave a Comment!</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="comment"
+                                    value={this.state.value}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="submit"
+                                    value="Submit"
+                                    className="btn btn-primary"
+                                />
+                            </div>
+                        </form>
+                    </div>
+                    <table className="table table-striped" style={{ marginTop: 20 }}>
+                        <thead>
+                            <tr>
+                                <th>Comment</th>
+                                <th>Likes</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>{recordList()}</tbody>
+                        <p>
+                            Sort by:
+                            <button className="btn btn-link" onClick={() => { setSortVal(0); }}>
+                                Most Popular
+                            </button> |
+                            <button className="btn btn-link" onClick={() => { setSortVal(1); }}>
+                                Least Popular
+                            </button>
+                        </p>
+                    </table>
+                </div>
+            );
+        }
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<MainPage />);
+
 }
 
