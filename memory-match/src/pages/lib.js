@@ -5,10 +5,10 @@ import './lib.css';
 import { BrowserRouter as Router, Routes, 
   Route } from "react-router-dom";
 
-import Bull from "./pages/bull";
-import Chick from "./pages/chick";
-import Ocean from "./pages/ocean";
-import Pup from "./pages/pup";
+import Bull from "./bull2";
+import Chick from "./chick2";
+import Ocean from "./ocean2";
+import Pup from "./pup2";
 import Try from "./pages/try";
 
 function Square(props){
