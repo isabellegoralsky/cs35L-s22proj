@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './lib.css';
 
 import { BrowserRouter as Router, Routes, 
   Route } from "react-router-dom";
@@ -9,6 +9,7 @@ import Bull from "./pages/bull";
 import Chick from "./pages/chick";
 import Ocean from "./pages/ocean";
 import Pup from "./pages/pup";
+import Try from "./pages/try";
 
 function Square(props){
 
@@ -99,9 +100,9 @@ class NavBar extends React.Component {
           <li><a class="nav-item" href="google.com">GAME</a></li>
           <li><a class="nav-item" href="google.com">COMMENTS/CONCERNS</a></li>
           <Router>
-            <a href={`/index`}>
+            <a href={`/`}>
               <li class="nav-item">LIBRARY</li>
-            </a>  
+            </a>
           </Router>
         </ul>
       </nav>

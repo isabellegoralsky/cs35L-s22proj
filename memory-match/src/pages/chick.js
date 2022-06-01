@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../lib.css';
 
 function Image(props){
   return (
