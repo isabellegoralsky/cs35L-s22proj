@@ -1,7 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './game.css';
+import {
+     BrowserRouter as Router,
+} from "react-router-dom";
 
+// We import bootstrap to make our application look better.
+import "bootstrap/dist/css/bootstrap.css";
+
+
+export default function MedGame() {
+    function Square(props) {
+
+        return (
+            <button className="options">
+                {props.value}
+            </button>
+        );
+    }
+
+
+    function renderSquare(i) {
+        return (
+            <Square
+                value={i}
+            />
+        );
+    }
+
+class NavBar extends React.Component {
+    render() {
+        return (
+            <nav>
+                <div><img className="navlogo" src="memmatch35L.svg" alt="library" width="100" height="60" /></div>
+                <ul class="nav-items">
+                    <Router><a href={`/`}><li class="nav-item">HOME</li></a></Router>
+                    <Router><a href={`/game`}><li class="nav-item">GAME</li></a></Router>
+                    <Router><a href={`/comments`}> <li class="nav-item">COMMENTS/CONCERNS</li></a></Router>
+                    <Router><a href={`/library`}> <li class="nav-item">LIBRARY</li></a></Router>
+                </ul>
+            </nav>
+        )
+    }
+}
+class Foot extends React.Component {
+    render() {
+        return (
+            <footer>
+                <div className="foot">
+                    made by md, ig, sr<br />
+                    cs35L spr 2022
+                </div>
+            </footer>
+        )
+    }
+}
 //optimized Fisher-Yates shuffle algorithm
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -53,26 +105,13 @@ class Board extends React.Component {
   }
 
   handleClick(i) {
-    console.log("clicked i: ", i)
-    const img_show = this.state.img_show.slice();
-    const img_matched = this.state.img_matched.slice();
-    const img_value = this.state.img_value.slice();
-    if (i == "reset"){
-      console.log("Resetting")
-      this.setState({
-        img_show: Array(32).fill(0),
-        img_matched: Array(32).fill(0),
-        first_pick: true,
-        first_pick_index: -1,
-        score: 0,
-        playable: 1,
-        pset: this.state.pset,
-      });
-    }
-   else  if (this.state.playable==0 || calculateWinner(img_matched) ||
-img_matched[i]){
-      return;
-    }          
+      console.log("clicked i: ", i)
+      const img_show = this.state.img_show.slice();
+      const img_matched = this.state.img_matched.slice();
+      const img_value = this.state.img_value.slice();
+      if (this.state.playable == 0 || calculateWinner(img_matched) || img_matched[i]) {
+          return;
+      }
   else if (img_show.includes(img_value[i]) && i!=this.state.first_pick_index){
       img_matched[i]=1;
       img_matched[this.state.first_pick_index]=1;
@@ -154,20 +193,23 @@ img_matched[i]){
     }
      
     return (
-      <div>
-        <label className="dropdown-pics">
-          Choose your photoset:
-          <select id = "pset" value={this.state.pset} onChange={(e) => 
-{this.handleChange(e)}}>
-            <option value="bull">Bulldogs</option>
-            <option value="p">Puppies</option>
-            <option value="chicks">BabyChickens</option>
-            <option value="s">SeaLife</option>
-          </select>
-        </label>
-        <button onClick={() => this.handleClick("reset")}>
-          Reset Game
-        </button>
+        <div>
+            <label className="dropdown-pics">
+                Choose your photoset:
+                <select id="pset" value={this.state.pset} onChange={(e) => { this.handleChange(e) }}>
+                    <option value="bull">Bulldogs</option>
+                    <option value="p">Puppies</option>
+                    <option value="chicks">BabyChickens</option>
+                    <option value="s">SeaLife</option>
+                </select>
+                <Router>
+                    <div className="reset-button">
+                        <a href={`/gamemedium`}>
+                            <div className="lib">{renderSquare("Reset")}</div>
+                        </a>
+                    </div>
+                </Router>
+            </label>                
       <div className="status2">{status}</div>
       <div className="rows">
         <div className="img-row">
@@ -260,21 +302,40 @@ className="lib-img">{this.renderImage(35)}</div>
   }
 }
 
-class Game extends React.Component {
-  render() {  
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>  
-    );
-  }
-}
+    class Game extends React.Component {
+        render() {
+            return (
+                <div>
+                    <div className="navigation-div"> <NavBar /> </div>
+                    <div className="game-body">
+                        <h3 className="play">PLAY MEMORY MATCH!</h3>
+                        <div className="l1nks2">
+                            <Router>
+                                <div className="linkies">
+                                    <a href={`/game`}>
+                                        <div className="lib">{renderSquare("Easy")}</div>
+                                    </a>
+                                    <a href={`/gamemedium`}>
+                                        <div className="lib">{renderSquare("Medium")}</div>
+                                    </a>
+                                    <a href={`/gamehard`}>
+                                        <div className="lib">{renderSquare("Hard")}</div>
+                                    </a>
+                                </div>
+                            </Router>
+                        </div>
+                    </div>
+                    <div className="game">
+
+                        <div className="game-board">
+                            <Board />
+                        </div>
+                    </div>
+                    <div className="navigation-div"> <Foot /> </div>
+                </div >
+            );
+        }
+    }
 
 // ========================================
 
@@ -289,4 +350,6 @@ function calculateWinner(img_matched) {
     }
   }
   return win;
+}
+
 }

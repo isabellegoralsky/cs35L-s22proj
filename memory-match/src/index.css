@@ -124,10 +124,14 @@ footer {
     padding: 0 0 0 0;
 }
 
+.l1nks2 {
+    padding: 0 0 15px 0;
+}
 .linkies{
     display: flex;
     flex-direction: row;
 }
+
 
 .lib {
     padding-top: 10px;
