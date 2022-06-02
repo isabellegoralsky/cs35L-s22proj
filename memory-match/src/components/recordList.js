@@ -198,7 +198,8 @@ export default function RecordList() {
             return (
                 <div>
                     <div className="navigation-div"> <NavBar /> </div>
-                    <h3>Comments and Concerns</h3>
+                    <div className="comments">
+                    <h3 className="play">Comments and Concerns</h3>
                     <div>
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
@@ -211,7 +212,7 @@ export default function RecordList() {
                                     onChange={this.handleChange}
                                 />
                             </div>
-                            <div className="form-group">
+                            <div className="form-group2">
                                 <input
                                     type="submit"
                                     value="Submit"
@@ -220,10 +221,11 @@ export default function RecordList() {
                             </div>
                         </form>
                     </div>
-                    <table className="table table-striped" style={{ marginTop: 20 }}>
+                    </div>
+                    <table className="table table-striped" style={{ marginTop: 70}}>
                         <thead>
                             <tr>
-                                <th>Comment</th>
+                                <th><span className="deets">Comment</span></th>
                                 <th>Likes</th>
                                 <th>Action</th>
 
@@ -231,8 +233,8 @@ export default function RecordList() {
 
                         </thead>
                         <tbody>{recordList()}</tbody>
-                        <p>
-                            Sort by:
+                        <p className="sorts">
+                            <span className="deets">Sort by:</span>
                             <button className="btn btn-link" onClick={() => { setSortVal(0); }}>
                                 Most Popular
                             </button> |

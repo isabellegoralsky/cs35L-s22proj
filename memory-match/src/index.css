@@ -66,8 +66,26 @@ body {
     padding-bottom: 20px;
 }
 
+.board-button{
+    border-radius: 10px;
+    background-color: #0A0708;
+}
+
 .status {
     padding: 10px;
+    padding-bottom: 0;
+    font-size: 14px;
+}
+
+.dropdown-pics{
+    margin-left: 175px;
+    padding-left: 10px;
+}
+
+.status2 {
+    margin-left: 175px;
+    padding-left: 10px;
+    padding-top: 10px;
     padding-bottom: 0;
     font-size: 14px;
 }
@@ -142,7 +160,6 @@ a {
     padding-top: 20px;
     justify-content: center;
 }
-
 .img-row {
     display: flex;
     align-items: center;
@@ -198,8 +215,7 @@ ol, ul {
 }
 
 .game {
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
 .game-info {
@@ -222,4 +238,31 @@ ol, ul {
 
 .home-title2{
     padding-top: 20px;
+}
+
+.play{
+    margin-top: 65px;
+    font-size: 42px;
+}
+
+.game-body{
+    padding-left: 175px;
+}
+
+.comments{
+    padding-left: 175px;
+    padding-right: 175px;
+}
+
+.form-group{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.deets{
+    margin-left: 50px;
+}
+
+.sorts{
+    padding-top: 10px;
 }

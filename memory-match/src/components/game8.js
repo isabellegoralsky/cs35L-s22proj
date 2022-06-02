@@ -16,7 +16,7 @@ function Image(props){
   var imgindex = props.source.charAt(props.source.length-5);
   //console.log("imgindex: ", imgindex);
   return (
-    <button>
+    <button className="board-button">
       <img className="libimages" src={props.source} alt="libraries"
       width="70" height="70"
       onClick = {()=>props.onClick(imgindex)}/>
@@ -155,7 +155,7 @@ render() {
     
     return (
       <div>
-        <label>
+        <label className="dropdown-pics">
           Choose your photoset:
           <select id = "pset" value={this.state.pset} onChange={(e) =>
 {this.handleChange(e)}}>
@@ -168,7 +168,7 @@ render() {
         <button onClick={() => this.handleClick("reset")}>
           Reset Game
         </button>
-      <div className="status">{status}</div>
+      <div className="status2">{status}</div>
       <div className="rows">
         <div className="img-row">
           <div

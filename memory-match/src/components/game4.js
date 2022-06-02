@@ -16,7 +16,7 @@ function Image(props){
   var imgindex = props.source.charAt(props.source.length-5);
   //console.log("imgindex: ", imgindex);
   return (
-    <button>
+    <button className="board-button">
       <img className="libimages" src={props.source} alt="libraries" 
       width="100" height="100"
       onClick = {()=>props.onClick(imgindex)}/>
@@ -144,7 +144,7 @@ class Board extends React.Component {
       
     return (
       <div>
-        <label>
+        <label className="dropdown-pics">
           Choose your photoset:
           <select id = "pset" value={this.state.pset} onChange={(e) => {this.handleChange(e)}}>
             <option value="bull">Bulldogs</option>
@@ -153,7 +153,7 @@ class Board extends React.Component {
             <option value="s">SeaLife</option>
           </select>
         </label>
-      <div className="status">{status}</div>
+      <div className="status2">{status}</div>
       <div className="rows">
         <div className="img-row">
           <div

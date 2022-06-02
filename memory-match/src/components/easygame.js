@@ -50,7 +50,7 @@ export default function EasyGame() {
         console.log(props.source)
         var imgindex = props.source.charAt(props.source.length - 5);
         return (
-            <button>
+            <button className="board-button">
                 <img className="libimages" src={props.source} alt="libraries"
                     width="100" height="100"
                     onClick={() => props.onClick(imgindex)} />
@@ -143,7 +143,7 @@ export default function EasyGame() {
             console.log("pset: ", this.state.pset);
             if (this.state.pset == "bull") {
                 console.log("Bulldogs!");
-                var imgname = "bulldog/" + this.state.pset + index + ".jpg";
+                var imgname = "/bulldog/" + this.state.pset + index + ".jpg";
             }
             else if (this.state.pset == "chicks") {
                 console.log("Lil Baby Chicks!");
@@ -178,7 +178,7 @@ export default function EasyGame() {
 
             return (
                 <div>
-                    <label>
+                    <label className="dropdown-pics">
                         Choose your photoset:
                         <select id="pset" value={this.state.pset} onChange={(e) => { this.handleChange(e) }}>
                             <option value="bull">Bulldogs</option>
@@ -187,7 +187,7 @@ export default function EasyGame() {
                             <option value="s">SeaLife</option>
                         </select>
                     </label>
-                    <div className="status">{status}</div>
+                    <div className="status2">{status}</div>
                     <div className="rows">
                         <div className="img-row">
                             <div
@@ -241,7 +241,8 @@ export default function EasyGame() {
             return (
                 <div>
                     <div className="navigation-div"> <NavBar /> </div>
-                 <h3>Play Memory Match!</h3>
+                <div className="game-body">
+                 <h3 className="play">PLAY MEMORY MATCH!</h3></div>
                 <div className="game">
                     
                     <div className="game-board">

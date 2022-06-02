@@ -72,7 +72,7 @@ export default function Ocean() {
         render() {
             return (
                 <nav>
-                    <div><img className="navlogo" src="memmatch35L.svg" alt="library" width="100" height="60" /></div>
+                    <div><img className="navlogo" src="/memmatch35L.svg" alt="library" width="100" height="60" /></div>
                     <ul class="nav-items">
                         <Router><a href={`/`}><li class="nav-item">HOME</li></a></Router>
                         <Router><a href={`/game`}><li class="nav-item">GAME</li></a></Router>

@@ -6,14 +6,22 @@
 sans-serif;
 }
 
-.status{
-    padding:10px;
-    padding-bottom: 0;
-    margin-bottom: 10px;
+.status2 {
+  margin-left: 175px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  font-size: 14px;
 }
 
 .rows{
     padding-top: 20px;
+    justify-content: center;
+}
+
+.dropdown-pics{
+  margin-left: 175px;
+  padding-left: 10px;
 }
 
 .img-row{
@@ -59,4 +67,9 @@ ol, ul {
  
 .game-info {
   margin-left: 20px;
+}
+
+.board-button{
+  border-radius: 10px;
+  background-color: #0A0708;
 }
