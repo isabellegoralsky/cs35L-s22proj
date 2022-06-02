@@ -1,3 +1,25 @@
+# Running the Game
+
+In order to run this application, first navigate into the server directory and run
+
+### `npm install`
+
+To install all necessary dependencies. Follow this by running 
+
+### `node server.js`
+
+In the same file to start up the server, which will run on localhost:5000
+
+In a separate instance of the command line, navigate into the memory-match directory. Run
+
+### `npm install`
+
+To install allnecessary dependencies. Then run
+
+### `npm start`
+
+To run the client for memory-match on localhost:3000.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
