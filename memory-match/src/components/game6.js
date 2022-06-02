@@ -202,15 +202,17 @@ class Board extends React.Component {
                     <option value="chicks">BabyChickens</option>
                     <option value="s">SeaLife</option>
                 </select>
-                <Router>
-                    <div className="reset-button">
-                        <a href={`/gamemedium`}>
-                            <div className="lib">{renderSquare("Reset")}</div>
-                        </a>
+            </label>
+            <div className="score-res">
+                      <Router>
+                            <div className="reset-button">
+                                <a href={`/game`}>
+                                    <div className="lib">{renderSquare("Reset")}</div>
+                                </a>
+                            </div>
+                        </Router>
+                    <div className="status2">{status}</div>
                     </div>
-                </Router>
-            </label>                
-      <div className="status2">{status}</div>
       <div className="rows">
         <div className="img-row">
           <div   

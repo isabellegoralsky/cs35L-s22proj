@@ -83,11 +83,10 @@ body {
 }
 
 .status2 {
-    margin-left: 175px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 0;
     font-size: 14px;
+    padding-left: 10px;
 }
 
 .img-row {
@@ -269,4 +268,10 @@ ol, ul {
 
 .sorts{
     padding-top: 10px;
+}
+
+.score-res{
+    display: flex;
+    flex-direction: row;
+    padding-left: 175px;
 }
